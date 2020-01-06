@@ -1,2 +1,5 @@
 # Blender backup files
 *.blend[1-9]*
+
+# Exported assets
+*.fbx
