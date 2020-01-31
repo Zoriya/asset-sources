@@ -11,6 +11,14 @@ def export_file(filename, output_path):
                               export_materials=False,
                               export_apply=True)
 
-output_path = Path(sys.argv[sys.argv.index('--') + 1])
-for filename in Path('.').glob('Objects/**/*.blend'):
+
+def zorya_path():
+    if '--' in sys.argv:
+        return Path(sys.argv[sys.argv.index('--') + 1])
+    else:
+        return Path('../zoriya')
+
+
+output_path = zorya_path()
+for filename in Path('.').glob('**/*.blend'):
     export_file(filename, output_path)
