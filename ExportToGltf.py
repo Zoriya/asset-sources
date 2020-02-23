@@ -20,6 +20,6 @@ def zorya_path():
 
 
 output_path = zorya_path()
-for pattern in ('Environment/Camp/*.blend', 'Items/Potions/*.blend'):
+for pattern in ('Environment/Camp/*.blend', 'Items/Potions/Models/*.blend'):
     for filename in Path('.').glob(pattern):
         export_file(filename, output_path)
