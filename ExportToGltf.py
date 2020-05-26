@@ -13,11 +13,9 @@ def export_file(filename, output_path):
 def zorya_path():
     if '--' in sys.argv:
         return Path(sys.argv[sys.argv.index('--') + 1])
-    else:
-        return Path('../zoriya')
+    return Path('../zoriya')
 
 
 output_path = zorya_path()
-for pattern in ('Environment/Landscape/Island.blend', 'Environment/Camp/Bonfire/*.blend', 'Items/Potions/Models/*.blend'):
-    for filename in Path('.').glob(pattern):
-        export_file(filename, output_path)
+for filename in Path().glob('**/*.blend'):
+    export_file(filename, output_path)
